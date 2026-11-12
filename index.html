@@ -2045,6 +2045,102 @@
       margin: 0;
     }
 
+    /* Horario de Secretaría */
+    .horario-panel {
+      background: #1A1918;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .horario-panel-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.9rem;
+    }
+
+    .horario-panel-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: #FFFFFF;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .horario-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .horario-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.88rem;
+    }
+
+    .horario-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .horario-day {
+      color: #CBD5E1;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+      line-height: 1.35;
+    }
+
+    .horario-time {
+      font-family: var(--font-mono);
+      color: #FFFFFF;
+      font-weight: 700;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      line-height: 1.35;
+      gap: 2px;
+    }
+
+    .horario-note {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      color: #94A3B8;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .horario-row-closed .horario-day {
+      color: #94A3B8;
+    }
+
+    .horario-row-closed .horario-time {
+      color: #94A3B8;
+    }
+
+    @media (max-width: 480px) {
+      .horario-panel {
+        padding: 1rem !important;
+      }
+      .horario-row {
+        gap: 0.5rem;
+        padding-bottom: 0.55rem;
+        font-size: 0.84rem;
+      }
+      .horario-note {
+        font-size: 0.74rem;
+      }
+    }
+
     .contact-map-column {
       position: relative;
       min-height: 480px;
@@ -3406,29 +3502,38 @@
             </div>
 
             <!-- Panel de Horários de Secretaria Estruturado -->
-            <div style="background:#1A1918; border:1px solid rgba(255, 255, 255, 0.10); border-radius:12px; padding:1.25rem; margin-bottom:1.5rem;">
-              <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.85rem;">
+            <div class="horario-panel">
+              <div class="horario-panel-header">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="color:#94A3B8;" aria-hidden="true">
                   <circle cx="12" cy="12" r="10"></circle>
                   <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
-                <span style="font-family:var(--font-mono); font-size:0.75rem; color:#FFFFFF; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;">
+                <span class="horario-panel-title">
                   Horario de Atención en Secretaría
                 </span>
               </div>
 
-              <div style="display:flex; flex-direction:column; gap:0.6rem;">
-                <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:0.5rem; border-bottom:1px solid rgba(255, 255, 255, 0.08); font-size:0.88rem;">
-                  <span style="color:#CBD5E1; font-weight:600;">Lunes a Jueves</span>
-                  <span style="font-family:var(--font-mono); color:#FFFFFF; font-weight:700;">10:00 - 13:00 | 16:00 - 20:00</span>
+              <div class="horario-list">
+                <div class="horario-row">
+                  <span class="horario-day">Lunes a Jueves</span>
+                  <div class="horario-time">
+                    <span>10:00 - 13:00</span>
+                    <span>16:00 - 20:00</span>
+                  </div>
                 </div>
-                <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:0.5rem; border-bottom:1px solid rgba(255, 255, 255, 0.08); font-size:0.88rem;">
-                  <span style="color:#CBD5E1; font-weight:600;">Viernes</span>
-                  <span style="font-family:var(--font-mono); color:#FFFFFF; font-weight:700;">10:00 - 13:00 <small style="color:#94A3B8;">(tardes en ruta)</small></span>
+                <div class="horario-row">
+                  <span class="horario-day">Viernes</span>
+                  <div class="horario-time">
+                    <span>10:00 - 13:00</span>
+                    <span class="horario-note">(Tardes en ruta)</span>
+                  </div>
                 </div>
-                <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.88rem;">
-                  <span style="color:#94A3B8; font-weight:600;">Sábado y Domingo</span>
-                  <span style="font-family:var(--font-mono); color:#94A3B8; font-weight:600;">Cerrado <small>(prácticas concertadas)</small></span>
+                <div class="horario-row horario-row-closed">
+                  <span class="horario-day">Sábado y Domingo</span>
+                  <div class="horario-time">
+                    <span style="color:#F87171;">Cerrado</span>
+                    <span class="horario-note">(Prácticas concertadas)</span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,0 +1,19 @@
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+
+# Logs
+*.log
+
+# Editores & IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependencias locais (caso aplicavel no futuro)
+node_modules/
+.npm/

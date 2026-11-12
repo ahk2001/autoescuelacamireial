@@ -700,19 +700,6 @@
       color: var(--brand-vibrant-red);
     }
 
-    @media (max-width: 768px) {
-      .hero-editorial {
-        padding-bottom: 96px;
-        padding-top: 100px;
-      }
-      .hero-editorial-inner {
-        padding: 0 1rem;
-      }
-      .hero-editorial-title {
-        font-size: clamp(2.35rem, 8.5vw, 3.2rem);
-        line-height: 1.05;
-      }
-    }
 
     /* ==========================================================================
        4. SECCIÓN DE MÉTRICAS EDITORIAL (ESTILO PERIÓDICO / GALERÍA)
@@ -2276,29 +2263,78 @@
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
     }
 
-    /* Mobile adjustments */
-    @media (max-width: 767px) {
+    /* Mobile adjustments - Hero editorial com titulo centralizado acima do carro e texto abaixo */
+    @media (max-width: 768px) {
       .hero-editorial {
-        padding-top: 110px;
-        padding-bottom: 60px;
-        align-items: center;
+        min-height: 100vh;
+        min-height: 100dvh;
+        height: 100dvh;
+        padding-top: max(80px, calc(env(safe-area-inset-top, 0px) + 74px)) !important;
+        padding-bottom: max(22px, calc(env(safe-area-inset-bottom, 0px) + 18px)) !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        box-sizing: border-box !important;
       }
-      .hero-vignette {
-        background:
-          linear-gradient(180deg, rgba(10, 9, 8, 0.92) 0%, rgba(10, 9, 8, 0.6) 28%, transparent 48%),
-          linear-gradient(0deg, rgba(10, 9, 8, 0.98) 0%, rgba(10, 9, 8, 0.88) 50%, rgba(10, 9, 8, 0.35) 100%);
+      .hero-editorial-inner {
+        padding: 0 !important;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        flex: 1;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
       }
       .hero-lead-editorial {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: center !important;
         background: transparent !important;
         padding: 0 !important;
         border: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
         box-shadow: none !important;
       }
       .hero-editorial-title {
-        font-size: 2.25rem;
-        line-height: 1.1;
+        font-size: clamp(1.8rem, 6.8vw, 2.3rem) !important;
+        line-height: 1.1 !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 360px !important;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+      }
+      .hero-editorial-desc {
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: auto !important;
+        max-width: min(330px, 90vw) !important;
+        font-size: 0.88rem !important;
+        line-height: 1.4 !important;
+        padding: 0.55rem 0.95rem !important;
+        background: rgba(10, 9, 8, 0.72) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.14) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8) !important;
+        color: #F8FAFC !important;
+      }
+      .hero-vignette {
+        background:
+          linear-gradient(180deg, rgba(8, 7, 6, 0.92) 0%, rgba(8, 7, 6, 0.35) 24%, rgba(8, 7, 6, 0) 44%, rgba(8, 7, 6, 0.25) 70%, rgba(8, 7, 6, 0.95) 100%) !important;
+      }
+      .hero-bg-stage img {
+        object-position: center center !important;
+        animation: none !important;
+        transform: none !important;
       }
     }
 
@@ -2381,7 +2417,7 @@
         </h1>
         
         <p class="hero-editorial-desc">
-          En <strong>Autoescuela Camí Reial</strong> te ayudamos a obtener tu carnet de forma rápida, sencilla y sin nervios. Más de 10 años en Torrent, un <strong>90% de aprobados a la primera</strong>, aula con 10 tablets y <strong>circuito cerrado propio de prácticas de moto</strong>.
+          Tu carnet en Torrent sin nervios: <strong>90% de aprobados a la primera</strong>, aula con tablets y <strong>pista propia de motos</strong>.
         </p>
       </div>
     </div>

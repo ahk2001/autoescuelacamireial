@@ -1076,7 +1076,56 @@
 
     .permisos-marquee-cta-wrap {
       text-align: center;
-      margin-top: 1.5rem;
+      margin-top: 2rem;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .permisos-cta-btn {
+      background: #FFFFFF !important;
+      color: #0E0D0C !important;
+      font-weight: 800 !important;
+      border-radius: 9999px !important;
+      padding: 14px 32px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      font-size: 0.98rem !important;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.22) !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+      text-decoration: none !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .permisos-cta-btn:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 14px 36px rgba(255, 255, 255, 0.35) !important;
+      color: #0E0D0C !important;
+    }
+
+    @media (max-width: 768px) {
+      .btn-editorial {
+        white-space: normal;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .permisos-marquee-cta-wrap {
+        margin-top: 1.5rem;
+        padding: 0 1rem;
+      }
+      .permisos-cta-btn {
+        width: 100% !important;
+        max-width: 340px !important;
+        white-space: normal !important;
+        text-align: center !important;
+        padding: 13px 18px !important;
+        font-size: 0.9rem !important;
+        line-height: 1.35 !important;
+        margin: 0 auto !important;
+      }
     }
 
     /* ==========================================================================
@@ -2753,7 +2802,7 @@
 
     <!-- Botón CTA Centralizado -->
     <div class="container permisos-marquee-cta-wrap reveal-on-scroll delay-2">
-      <a href="https://wa.me/34961290555?text=Hola%20Autoescuela%20Cam%C3%AD%20Reial%2C%20quisiera%20consultar%20requisitos%2C%20precios%20y%20fechas%20de%20los%20permisos." target="_blank" rel="noopener noreferrer" class="btn-editorial btn-primary" style="background:#FFFFFF; color:#000000; font-weight:800; border-radius:9999px; padding:14px 34px; display:inline-flex; align-items:center; gap:10px; font-size:1rem; box-shadow:0 10px 30px rgba(255, 255, 255, 0.2); transition:transform 0.2s ease, box-shadow 0.2s ease; text-decoration:none;">
+      <a href="https://wa.me/34961290555?text=Hola%20Autoescuela%20Cam%C3%AD%20Reial%2C%20quisiera%20consultar%20requisitos%2C%20precios%20y%20fechas%20de%20los%20permisos." target="_blank" rel="noopener noreferrer" class="btn-editorial permisos-cta-btn">
         <span>Consultar Requisitos y Precios por WhatsApp</span>
         <span aria-hidden="true">→</span>
       </a>
